@@ -1,10 +1,10 @@
 # Plataforma de Dados - Data Lakehouse
 
+Esta arquitetura segue o modelo **medalhão** (Bronze → Silver → Gold), combinando **ingestão, transformação, armazenamento, catalogação, governança e observabilidade**.
+
 <p align="center">
   <img src="imagem/Nova_plataforma_dados.png" alt="Modelagem"height=400px >
 </p>
-
-Esta arquitetura segue o modelo **medalhão** (Bronze → Silver → Gold), combinando **ingestão, transformação, armazenamento, catalogação, governança e observabilidade**.
 
 ---
 
