@@ -112,7 +112,7 @@ Este documento descreve o Plano de Migração da Arquitetura de Dados, abrangend
 
 ---
 
-## Que decisões tomaria e por quê
+## Decisões
 - Arquitetura medalhão → padronização e governança.
 - Transformações centralizadas no dbt → evita duplicação e facilita testes.
 - Airflow como orquestrador único → reduz risco do cron e integra todo o fluxo.
