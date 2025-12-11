@@ -25,7 +25,7 @@ Este documento descreve o Plano de Migração da Arquitetura de Dados, abrangend
 - **Landing**: Onde os dados chegam brutos exatamente como vêm da fonte.
 - **Bronze**: Ingestão padronizada: normaliza formatos, adiciona metadata, mas ainda sem grandes tratamentos.
 - **Silver**: Transformações validadas: limpeza, deduplicação, tipagem correta, joins; dados prontos para análise.
-- **Gold**: Camada de negócio: métricas, agregações, KPIs, modelos analíticos; dados prontos para consumo final.
+- **Gold**: Camada de negócio: métricas, agregações, KPIs, modelos analíticos, dados prontos para consumo final.
 
 ---
 
@@ -42,7 +42,7 @@ Este documento descreve o Plano de Migração da Arquitetura de Dados, abrangend
 ## Como conduziria a migração do legado para o novo modelo
 
 ### Estratégia de migração incremental – ETL - ELT
-- Novo ambiente isolado do legado; novos projetos já nascem no modelo ELT.
+- Novo ambiente isolado do legado, novos projetos já nascem no modelo ELT.
 - Cada pipeline com data de corte.
 - Execução paralela até validação final.
 
@@ -53,9 +53,9 @@ Este documento descreve o Plano de Migração da Arquitetura de Dados, abrangend
 - Criar DAG no Airflow (novo ambiente).
 
 ### Executar pipelines em paralelo e comparar
-- Métricas  
-- Registros  
-- Regras de negócio  
+- Métricas.
+- Registros.  
+- Regras de negócio.  
 - Validação com BI → apontar Looker para novo dataset.  
 - Desligar pipeline legado.
 
@@ -74,7 +74,7 @@ Este documento descreve o Plano de Migração da Arquitetura de Dados, abrangend
 ### Governança e padronização
 - DataHub para catálogo, lineage e documentação centralizada.
 - dbt tests (not_null, unique, …..).
-- Políticas de acesso baseadas em camadas.
+- Políticas de acesso baseadas em camadas e tabelas.
 - Padrões de nomenclatura e organização por domínio.
 
 ### Observabilidade
@@ -103,7 +103,7 @@ Este documento descreve o Plano de Migração da Arquitetura de Dados, abrangend
 
 ### Garantia de qualidade
 - PR obrigatório.
-- Automação: CI, lint, testes dbt.
+- Automação: CI / CD, testes dbt.
 - Templates de PR com checklist técnico.
 
 ### Escalabilidade

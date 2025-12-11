@@ -1,6 +1,6 @@
 # Plataforma de Dados - Data Lakehouse
 
-Esta arquitetura segue o modelo **medalhão** (Bronze → Silver → Gold), combinando **ingestão, transformação, armazenamento, catalogação, governança e observabilidade**.
+Esta arquitetura segue o modelo **medalhão** (Bronze - Silver - Gold), combinando **ingestão, transformação, armazenamento, catalogação, governança e observabilidade**.
 
 <p align="center">
   <img src="imagem/Nova_plataforma_dados.png" alt="Modelagem"height=400px >
@@ -43,7 +43,7 @@ O modelo medalhão organiza os dados em três camadas principais, cada uma com r
 ## 4. Transformação e Estruturação de Dados
 - **dbt (Data Build Tool)**  
   - Realiza transformações aplicando regras de negócio.
-  - Cria camadas **Bronze → Silver → Gold** no BigQuery.
+  - Cria camadas **Bronze - Silver - Gold** no BigQuery.
   - Gerencia testes de qualidade de dados (unicidade, valores nulos, integridade).
   - Documenta tabelas e rastreia lineage de dados.
 
@@ -93,8 +93,8 @@ O modelo medalhão organiza os dados em três camadas principais, cada uma com r
 ---
 
 ## Fluxo de Dados Resumido
-1. **Ingestão:** Airbyte → GCS Landing  
-2. **Transformação:** dbt → Bronze → Silver → Gold no BigQuery  
+1. **Ingestão:** Airbyte - GCS Landing  
+2. **Transformação:** dbt - Bronze - Silver - Gold no BigQuery  
 3. **Orquestração:** Airflow gerencia execução de ingestão e transformação  
 4. **Consumo:** Looker / pipelines ML acessam Gold no BigQuery  
 5. **Governança:** DataHub documenta, rastreia lineage e mantém catálogo  
